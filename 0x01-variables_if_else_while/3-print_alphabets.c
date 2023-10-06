@@ -9,10 +9,9 @@
 int main(void)
 {
 	int i;
+	int j;
 
 	i = 97;
-
-	int j;
 
 	j = 65;
 	do {
