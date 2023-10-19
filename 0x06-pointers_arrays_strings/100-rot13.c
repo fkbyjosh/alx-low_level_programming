@@ -9,16 +9,20 @@
 char *rot13(char *str)
 {
 	char *s = str;
+	char *alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *rot13 = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	for (; *s != '\0'; s++)
 	{
-		if ((*s >= 'a' && *s <= 'm') || (*s >= 'A' && *s <= 'M'))
+		char *ptr = alpha;
+
+		while (*ptr != *s && *ptr != '\0')
 		{
-			*s += 13;
+			ptr++;
 		}
-		else if ((*s >= 'n' && *s <= 'z') || (*s >= 'N' && *s <= 'Z'))
+		if (*ptr != '\0')
 		{
-			*s -= 13;
+			*s = rot13[ptr - alpha];
 		}
 	}
 	return (str);
