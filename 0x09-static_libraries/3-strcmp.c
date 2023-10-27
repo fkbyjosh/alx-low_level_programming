@@ -3,7 +3,7 @@
 /**
  * _strcmp - str cmp
  * @s1: first string
- * s2: second string
+ * @s2: second string
  *
  * Return: an int
  */
