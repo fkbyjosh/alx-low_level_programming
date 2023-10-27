@@ -2,7 +2,7 @@
 
 /**
  * _puts - puts
- * @s: some char
+ * @s: some string
  *
  * Return: void
  */
