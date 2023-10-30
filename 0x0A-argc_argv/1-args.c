@@ -3,12 +3,13 @@
 
 /**
  * main - prints the number of arguments passed
- * @argc - argument count
+ * @argc: argument count
+ * @argv: argument vector
  *
  * Return: 0 (successful)
  */
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	(void)argv;
 
