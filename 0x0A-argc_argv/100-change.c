@@ -6,6 +6,7 @@
  * main - minimum nuber of coins to make change
  * @argc: argument count
  * @argv: argument vector
+ * @change: change to be returned
  *
  * Return: 0 (success), 1 (unsuccessful)
  */
