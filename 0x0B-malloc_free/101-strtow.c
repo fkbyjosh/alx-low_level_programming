@@ -88,13 +88,17 @@ int count_words(char *str)
 
 char *get_next_word(char *str)
 {
-	int i;
-	int len = 0;
+	int i, len = 0;
 	char *word;
 
-	while (str[len] != ' ' && str[len] != '\0')
+	while (str[i] && str[i] != ' ' && str[i] != '\t')
 	{
 		len++;
+		i++;
+	}
+	if (len == 0)
+	{
+		return (NULL);
 	}
 	word = malloc((len + 1) * sizeof(char));
 	if (word == NULL)
