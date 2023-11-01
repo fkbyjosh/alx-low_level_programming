@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -32,10 +33,9 @@ char **strtow(char *str)
 
 	while (*str != '\0')
 	{
-		while (*str == ' ')
-		{
+
+		while (*str == ' ' || *str == '\t')
 			str++;
-		}
 		if (*str != '\0')
 		{
 			words[word_count++] = get_next_word(str);
@@ -44,7 +44,7 @@ char **strtow(char *str)
 				free_array(words, word_count - 1);
 				return (NULL);
 			}
-			str += 1;
+			str += strlen(words[word_count - 1]);
 		}
 	}
 	words[word_count] = NULL;
@@ -88,9 +88,13 @@ int count_words(char *str)
 
 char *get_next_word(char *str)
 {
-	int i, len = 0;
+	int i, j, len = 0;
 	char *word;
 
+	while (str[i] && (str[i] != ' ' && str[i] != '\t'))
+	{
+		i++;
+	}
 	while (str[i] && str[i] != ' ' && str[i] != '\t')
 	{
 		len++;
@@ -105,9 +109,13 @@ char *get_next_word(char *str)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < len; i++)
+
+	i = i - len;
+
+	for (j = 0; j < len; j++)
 	{
-		word[i] = str[i];
+		word[j] = str[i];
+		i++;
 	}
 
 	word[len] = '\0';
