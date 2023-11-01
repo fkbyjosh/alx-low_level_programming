@@ -11,7 +11,10 @@
 
 char **strtow(char *str)
 {
-	int i, num_words, word_count = 0;
+	int count_words(char *str);
+	char *get_next_word(char *str);
+	void free_array(char **arr, int size);
+	int num_words, word_count = 0;
 	char **words;
 
 	if (str == NULL || *str == '\0')
@@ -85,6 +88,7 @@ int count_words(char *str)
 
 char *get_next_word(char *str)
 {
+	int i;
 	int len = 0;
 	char *word;
 
@@ -97,7 +101,7 @@ char *get_next_word(char *str)
 	{
 		return (NULL);
 	}
-	for (int i = 0; i < len; i++)
+	for (i = 0; i < len; i++)
 	{
 		word[i] = str[i];
 	}
@@ -115,7 +119,9 @@ char *get_next_word(char *str)
 
 void free_array(char **arr, int size)
 {
-	for (int i = 0; i < size; i++)
+	int i;
+
+	for (i = 0; i < size; i++)
 	{
 		free(arr[i]);
 	}
