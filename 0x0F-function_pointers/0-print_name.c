@@ -1,4 +1,5 @@
-#include "main.h"
+#include "function_pointers.h"
+#include <stdio.h>
 
 /**
  * print_name - prints a name
@@ -11,23 +12,4 @@
 void print_name(char *name, void (*f)(char *))
 {
 	f(name);
-}
-
-/**
- * print_to_console - prints name characters to console
- * @name: name to be printed
- *
- * Return: void
- */
-
-void print_to_console(char *name)
-{
-	int i;
-	
-	while (name[i] != '\0')
-	{
-		_putchar(name[i]);
-		i++;
-	}
-	_putchar('\n');
 }
