@@ -44,7 +44,7 @@ void print_opcodes(int num_bytes)
 
 	for (i = 0; i < num_bytes; i++)
 	{
-		printf("%02x", opcode_ptr[i]);
+		printf("%02x ", opcode_ptr[i]);
 	}
 	printf("\n");
 }
