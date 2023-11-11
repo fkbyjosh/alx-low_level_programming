@@ -42,7 +42,7 @@ void print_opcodes(int num_bytes)
 	unsigned char *opcode_ptr = (unsigned char *)main_ptr;
 	int i;
 
-	for (int i = 0; i < num_bytes; i++)
+	for (i = 0; i < num_bytes; i++)
 	{
 		printf("%02x", opcode_ptr[i]);
 	}
