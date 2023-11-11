@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 
 void print_opcodes(int num_bytes)
 {
-	void (*main_ptr)() = &main;
+	void (*main_ptr)() = (void (*)())&main;
 	unsigned char *opcode_ptr = (unsigned char *)main_ptr;
 	int i;
 
