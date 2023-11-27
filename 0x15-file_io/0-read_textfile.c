@@ -10,17 +10,17 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	int file_descriptor;
+	char buffer[1024];
+	ssize_t bytes_read, bytes_written, total_written = 0;
+
 	if (filename == NULL)
 		return (0);
 
-	int file_descriptor = open(filename, O_RDONLY);
+	file_descriptor = open(filename, O_RDONLY);
 
 	if (file_descriptor == -1)
 		return (0);
-	char buffer[1024];
-
-	ssize_t bytes_read, bytes_written, total_written = 0;
-
 	while ((bytes_read = read(file_descriptor, buffer, sizeof(buffer))) > 0)
 	{
 		bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
